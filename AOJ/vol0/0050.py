@@ -1,0 +1,5 @@
+st = input()
+st = st.replace("apple","NULL")
+st = st.replace("peach", "apple")
+st = st.replace("NULL", "peach")
+print(st)
