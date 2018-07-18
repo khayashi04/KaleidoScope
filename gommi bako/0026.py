@@ -9,55 +9,21 @@ while i < 50:
 		x, y, s = list(map(int,input().split(",")))
 	except:
 		break
-	if x - 1 < 0 or  x - 2 < 0 or  x - 3 < 0 or y - 1 < 0 or y - 2 < 0 or  y - 3 < 0:
-		if s == 3:
-			paper[(x+2,y)] += 1
-			paper[(x,y+2)] += 1
-		if s >= 2:
-			paper[(x+1,y+1)] += 1
-		paper[(x,y)] += 1
-		paper[(x,y+1)] += 1
-		paper[(x+1,y)] += 1
-	elif x - 1 < 0 or  x - 2 < 0 or  x - 3 < 0:
-		if s == 3:
-			paper[(x+2,y)] += 1
-			paper[(x,y+2)] += 1
-			paper[(x,y-2)] += 1
-		if s >= 2:
-			paper[(x+1,y+1)] += 1
-			paper[(x+1,y-1)] += 1
-		paper[(x,y)] += 1
-		paper[(x,y-1)] += 1
-		paper[(x,y+1)] += 1
-		paper[(x+1,y)] += 1
-	elif y - 1 < 0 or y - 2 < 0 or  y - 3 < 0:
-		if s == 3:
-			paper[(x+2,y)] += 1
-			paper[(x-2,y)] += 1
-			paper[(x,y+2)] += 1
-		if s >= 2:
-			paper[(x+1,y+1)] += 1
-			paper[(x-1,y+1)] += 1
-		paper[(x,y)] += 1
-		paper[(x,y+1)] += 1
-		paper[(x+1,y)] += 1
-		paper[(x-1,y)] += 1
-	else:
-		if s == 3:
-			paper[(x+2,y)] += 1
-			paper[(x-2,y)] += 1
-			paper[(x,y+2)] += 1
-			paper[(x,y-2)] += 1
-		if s >= 2:
-			paper[(x+1,y+1)] += 1
-			paper[(x+1,y-1)] += 1
-			paper[(x-1,y+1)] += 1
-			paper[(x-1,y-1)] += 1
-		paper[(x,y)] += 1
-		paper[(x,y-1)] += 1
-		paper[(x,y+1)] += 1
-		paper[(x+1,y)] += 1
-		paper[(x-1,y)] += 1
+	if s == 3:
+		paper[(x+2,y)] += 1
+		paper[(x-2,y)] += 1
+		paper[(x,y+2)] += 1
+		paper[(x,y-2)] += 1
+	if s >= 2:
+		paper[(x+1,y+1)] += 1
+		paper[(x+1,y-1)] += 1
+		paper[(x-1,y+1)] += 1
+		paper[(x-1,y-1)] += 1
+	paper[(x,y)] += 1
+	paper[(x,y-1)] += 1
+	paper[(x,y+1)] += 1
+	paper[(x+1,y)] += 1
+	paper[(x-1,y)] += 1
 	i += 1
 
 for i in range(10):
