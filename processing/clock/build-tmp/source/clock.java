@@ -26,9 +26,9 @@ public void draw(){
   	float m = minute() + (s/60.0f);
   	float h = hour()%12 + (m/60.0f);
 	
-	int ss = 400;
-	int mm = 450;
-	int hh = 500;
+	int ss = width / 2;
+	int mm = width / 2 + 50;
+	int hh = width / 2 + 50;
 	
 	translate(width/2,height/2);
 	noFill();
@@ -56,36 +56,33 @@ public void draw(){
 	noFill();
 	
 	strokeWeight(5);
-	stroke(255,100);
+	stroke(255,50);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
 	rect(0-(ss/2),0-(ss/2),ss,ss);
-	strokeWeight(10);
-	stroke(255,0,0);	
-	point(0-ss/2,0-ss/2);
+	stroke(255,0,0,50);
+	line(0-ss/2,0-ss/2,0,0);
 	popMatrix();
 
 	strokeWeight(5);
-	stroke(255,100);
+	stroke(255,50);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
 	rect(0-(mm/2),0-(mm/2),mm,mm);
-	strokeWeight(10);
-	stroke(0,255,0);
-	point(0-mm/2,0-mm/2);
+	stroke(0,255,0,50);
+	line(0-mm/2,0-mm/2,0,0);
 	popMatrix();
 
 	strokeWeight(5);
-	stroke(255,100);
+	stroke(255,50);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
 	rect(0-(hh/2),0-(hh/2),hh,hh);
-	strokeWeight(10);
-	stroke(0,0,255);
-	point(0-hh/2,0-hh/2);
+	stroke(0,0,255,50);
+	line(0-hh/2,0-hh/2,0,0);
 	popMatrix();
 }
-  public void settings() { 	size(900,900); }
+  public void settings() { 	size(700,700); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "clock" };
     if (passedArgs != null) {

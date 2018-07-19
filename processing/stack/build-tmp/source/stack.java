@@ -3,6 +3,8 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import processing.opengl.*; 
+
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -14,33 +16,27 @@ import java.io.IOException;
 
 public class stack extends PApplet {
 
-PVector pos;
-PVector soku;
+
 public void setup(){
-  
-  background(0);
-  frameRate(30);
-  pos = new PVector(0,0);
-  soku = new PVector(300.0f/60,300/60);
+    
+    noFill();
+    stroke(255);
+    background(0);
 }
+int i = 0;
 
 public void draw(){
-  pos.add(soku);
-  if((pos.x > width) || (pos.y > height)){
-    soku.x = soku.x * -1;
-    soku.y = soku.y * -1;
-  }
-  stroke(255,100);
-  noStroke();
-  fill(0);
-  rect(0,0,width,height);
-  stroke(255);
-
-  strokeWeight(50);
-  point(pos.x,pos.y);
-
+    if(i>=100){
+        background(0);
+        i = 0;
+    }
+    translate(width/2,height/2);
+    rotateY(radians(i));
+    rotateX(radians(i));
+    box(200,200,200);
+    i+=1;
 }
-  public void settings() {  size(900,900); }
+  public void settings() {  size(500,500,OPENGL); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "stack" };
     if (passedArgs != null) {

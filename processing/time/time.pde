@@ -3,6 +3,8 @@ void setup(){
 	frameRate(30);
 }
 
+int i = 0;
+
 void draw(){
 	background(0);
 	
@@ -59,5 +61,5 @@ void draw(){
 	    }
 	}
 	textSize(50);
-	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,10);
+	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,15);
 }
