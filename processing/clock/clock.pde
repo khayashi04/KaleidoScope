@@ -36,7 +36,7 @@ void draw(){
 	}
 	textSize(50);
 	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,10);
-	rotate(PI/4);
+rotate(PI/4);
 	noFill();
 	
 	strokeWeight(5);
