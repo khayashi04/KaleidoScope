@@ -26,9 +26,9 @@ public void draw(){
   	float m = minute() + (s/60.0f);
   	float h = hour()%12 + (m/60.0f);
 	
-	int r1 = 500;
-	int r2 = 500;
-	int r3 = 500;
+	int ss = 400;
+	int mm = 450;
+	int hh = 500;
 	
 	translate(width/2,height/2);
 	noFill();
@@ -59,30 +59,30 @@ public void draw(){
 	stroke(255,100);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	rect(0-(r1/2),0-(r1/2),r1,r1);
+	rect(0-(ss/2),0-(ss/2),ss,ss);
 	strokeWeight(10);
 	stroke(255,0,0);	
-	point(0-r1/2,0-r1/2);
+	point(0-ss/2,0-ss/2);
 	popMatrix();
 
 	strokeWeight(5);
 	stroke(255,100);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	rect(0-(r2/2),0-(r2/2),r2,r2);
+	rect(0-(mm/2),0-(mm/2),mm,mm);
 	strokeWeight(10);
 	stroke(0,255,0);
-	point(0-r2/2,0-r2/2);
+	point(0-mm/2,0-mm/2);
 	popMatrix();
 
 	strokeWeight(5);
 	stroke(255,100);
 	pushMatrix();
-	rotate(radians(h*(360/60)));
-	rect(0-(r3/2),0-(r3/2),r3,r3);
+	rotate(radians(h*(360/12)));
+	rect(0-(hh/2),0-(hh/2),hh,hh);
 	strokeWeight(10);
 	stroke(0,0,255);
-	point(0-r3/2,0-r3/2);
+	point(0-hh/2,0-hh/2);
 	popMatrix();
 }
   public void settings() { 	size(900,900); }
