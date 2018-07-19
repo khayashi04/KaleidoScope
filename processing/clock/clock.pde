@@ -10,9 +10,9 @@ void draw(){
   	float m = minute() + (s/60.0);
   	float h = hour()%12 + (m/60.0);
 	
-	int ss = width / 2;
-	int mm = width / 2 + 50;
-	int hh = width / 2 + 50;
+	float ss = width / 2;
+	float mm = width / 2 + 50;
+	float hh = width / 2 + 50;
 	
 	translate(width/2,height/2);
 	noFill();

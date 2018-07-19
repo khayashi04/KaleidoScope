@@ -26,9 +26,9 @@ public void draw(){
   	float m = minute() + (s/60.0f);
   	float h = hour()%12 + (m/60.0f);
 	
-	int ss = width / 2;
-	int mm = width / 2 + 50;
-	int hh = width / 2 + 50;
+	float ss = width / 2;
+	float mm = width / 2 + 50;
+	float hh = width / 2 + 50;
 	
 	translate(width/2,height/2);
 	noFill();
@@ -82,7 +82,7 @@ public void draw(){
 	line(0-hh/2,0-hh/2,0,0);
 	popMatrix();
 }
-  public void settings() { 	size(700,700); }
+  public void settings() { 	size(900,900); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "clock" };
     if (passedArgs != null) {
