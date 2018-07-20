@@ -1,28 +1,47 @@
 void setup(){
     size(700,700);
-    frameRate(60);
 }
 
 int i = 0;
 void draw(){
-    fill(0);
+    noStroke();
     translate(0,0);
-    fill(0,5);
+    fill(0,20);
     rect(0,0,width,height);
-    fill(255);
     float r = width / 2 -50;
-    float x = r * cos(radians(i));;
-    float y = r * sin(radians(i));;
-    float xx = r * cos(radians(-i));
-    float yy = r * sin(radians(-i));
+    
+    float x1 = r * cos(radians(i));
+    float y1 = r * sin(radians(i));
+    float x2 = r * cos(radians(i+180));
+    float y2 = r * sin(radians(i+180));
+    
+    float xm1 = (r - 50) * cos(radians(-i - 90));
+    float ym1 = (r - 50) * sin(radians(-i - 90));
+    float xm2 = (r - 50) * cos(radians(-i + 90));
+    float ym2 = (r - 50) * sin(radians(-i + 90));
+
+    float notx1 = r * cos(radians(i));
+    float noty1 = r * sin(radians(i+70));
+    float notx2 = r * cos(radians(i+180));
+    float noty2 = r * sin(radians(i+250));
+
+    float notmx1 = r * cos(radians(i+180));
+    float notmy1 = r * sin(radians(i+70));
+    float notmx2 = r * cos(radians(i));
+    float notmy2 = r * sin(radians(i+250));
 
     translate(width/2,height/2);
     stroke(255);
     strokeWeight(10);
-    point(x,y);
-    point(xx,yy);
-    strokeWeight(0);
-    //ellipse(0,0,r*2,r*2);
+    point(x1,y1);
+    point(x2,y2);
+    point(xm1,ym1);
+    point(xm2,ym2);
+    stroke(0,255,255);
+    point(notx1,noty1);
+    point(notx2,noty2);
+    point(notmx1,notmy1);
+    point(notmx2,notmy2);
     i += 1;
     println(i);
     if(i >= 360){
