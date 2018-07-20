@@ -23,7 +23,7 @@ int i = 0;
 
 public void draw(){
 	background(0);
-	
+
 	float s = second();
 	float m = minute();
 	float h = hour()%12;
@@ -79,7 +79,7 @@ public void draw(){
 	textSize(50);
 	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,15);
 }
-  public void settings() { 	size(700,700); }
+  public void settings() { 	size(900,900); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "time" };
     if (passedArgs != null) {

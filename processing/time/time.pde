@@ -7,7 +7,7 @@ int i = 0;
 
 void draw(){
 	background(0);
-	
+
 	float s = second();
 	float m = minute();
 	float h = hour()%12;

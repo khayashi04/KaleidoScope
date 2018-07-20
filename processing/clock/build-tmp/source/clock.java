@@ -20,7 +20,9 @@ public void setup(){
 }
 
 public void draw(){
-	background(0);
+	translate(0,0);
+	fill(0,50);
+	rect(0,0,width,height);
 
 	float s = second();
   	float m = minute() + (s/60.0f);
@@ -51,34 +53,38 @@ public void draw(){
 	    }
 	}
 	textSize(50);
+	fill(255,100);
+	if(s == 0.0f){
+		fill(255);
+	}
 	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,10);
 	rotate(PI/4);
 	noFill();
 	
 	strokeWeight(5);
-	stroke(255,50);
+	stroke(255,25);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
 	rect(0-(ss/2),0-(ss/2),ss,ss);
-	stroke(255,0,0,50);
+	stroke(255,0,0,25);
 	line(0-ss/2,0-ss/2,0,0);
 	popMatrix();
 
 	strokeWeight(5);
-	stroke(255,50);
+	stroke(255,25);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
 	rect(0-(mm/2),0-(mm/2),mm,mm);
-	stroke(0,255,0,50);
+	stroke(0,255,0,25);
 	line(0-mm/2,0-mm/2,0,0);
 	popMatrix();
 
 	strokeWeight(5);
-	stroke(255,50);
+	stroke(255,25);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
 	rect(0-(hh/2),0-(hh/2),hh,hh);
-	stroke(0,0,255,50);
+	stroke(0,0,255,25);
 	line(0-hh/2,0-hh/2,0,0);
 	popMatrix();
 }
