@@ -53,6 +53,7 @@ public void draw(){
     point(x2,y2);
     point(xm1,ym1);
     point(xm2,ym2);
+    ellipse(random(-10,10),random(0,10),r-70,r-70);
     stroke(0,255,255);
     point(notx1,noty1);
     point(notx2,noty2);
