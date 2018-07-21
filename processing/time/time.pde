@@ -61,5 +61,9 @@ void draw(){
 	    }
 	}
 	textSize(50);
+	fill(255);
+	if(s % 2 == 1){
+		fill(255,50);
+	}
 	text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),-150,15);
 }
