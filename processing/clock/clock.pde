@@ -28,7 +28,7 @@ void draw(){
 	
 	float radius = (width - 100) / 2; 
   	for(int t = 0; t < 360; t += 6){
-	    stroke(255,100);
+	    stroke(255,50);
 		strokeWeight(10);
 	    
 	    float radianT = radians(t);
@@ -37,7 +37,7 @@ void draw(){
 
 	    if(t % 30 == 0){
 	    	strokeWeight(15);
-	    	stroke(255);
+	    	stroke(255,100);
 	    	point(x,y);
 	    }else{
 		    point(x, y);	    	
@@ -66,7 +66,7 @@ void draw(){
 	rotate(radians(m*(360/60)));
 	rect(-r/2,-r/2,r,r);
 	stroke(0,0,255,25);
-	line(0-r/2,0-r/2,-50,-50);
+	line(-r/2,-r/2,-50,-50);
 	popMatrix();
 
 	strokeWeight(5);
