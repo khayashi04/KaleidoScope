@@ -37,12 +37,12 @@ public void draw(){
   	float m = minute() + (s/60.0f);
   	float h = hour()%12 + (m/60.0f);
 	
-	float r = width / 2 + 50;
+	float r = height / 2 + 50;
 	
 	translate(width/2,height/2);
 	noFill();
 	
-	float radius = (width - 100) / 2; 
+	float radius = (height - 100) / 2; 
   	for(int t = 0; t < 360; t += 6){
 	    stroke(255,50);
 		strokeWeight(10);
@@ -68,7 +68,7 @@ public void draw(){
 	rotate(PI/4);
 	noFill();
 	
-	strokeWeight(5);
+	strokeWeight(3);
 	stroke(255,25);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
@@ -76,7 +76,7 @@ public void draw(){
 	line(-r/2,-r/2,-150,-150);
 	popMatrix();
 
-	strokeWeight(5);
+	strokeWeight(4);
 	stroke(255,25);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
@@ -94,7 +94,7 @@ public void draw(){
 	line(-r/2,-r/2,-100,-100);
 	popMatrix();
 }
-  public void settings() { 	size(900,900); 	smooth(); }
+  public void settings() { 	size(displayWidth,displayHeight); 	smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "clock" };
     if (passedArgs != null) {

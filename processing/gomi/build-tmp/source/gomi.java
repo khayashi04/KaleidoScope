@@ -99,7 +99,6 @@ public void draw() {
   point(x6,y6);
   point(x6r,y6r);
   i+=2;
-  saveFrame("frames/######.tif");
 }
 
   public void settings() {  size(displayHeight, displayHeight);  smooth(); }
