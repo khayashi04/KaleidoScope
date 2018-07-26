@@ -27,7 +27,7 @@ public void setup(){
 }
 
 public void draw(){
-  //background(0);
+  background(0);
 
   translate(width/2,height/2);
   rotateY(frameCount * 0.03f);
@@ -51,9 +51,6 @@ public void draw(){
 
     if(lx != 0){
       line(tx,ty,tz,lx,ly,lz);
-    }
-    if(t < 180){
-      background(0);
     }
     lx = tx;
     ly = ty;

@@ -38,17 +38,18 @@ void draw(){
 	    if(t % 30 == 0){
 	    	strokeWeight(15);
 	    	stroke(255,100);
-	    	point(x,y);
+	    	point(x+random(-2,2),y+random(-2,2));
 	    }else{
-		    point(x, y);	    	
+		    point(x+random(-2,2),y+random(-2,2));	    	
 	    }
 	}
 	textSize(60);
 	fill(255);
+	float mr = random(-3,3);
 	if(s % 2==0){
-		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105,15);
+		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105+mr,15);
 	}
-	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105,15);
+	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105+mr,15);
 	rotate(PI/4);
 	noFill();
 	
@@ -56,7 +57,7 @@ void draw(){
 	stroke(255,25);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	rect(-r/2,-r/2,r,r);
+	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
 	line(-r/2,-r/2,-150,-150);
 	popMatrix();
 
@@ -64,7 +65,7 @@ void draw(){
 	stroke(255,25);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	rect(-r/2,-r/2,r,r);
+	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
 	stroke(0,0,255,25);
 	line(-r/2,-r/2,-50,-50);
 	popMatrix();
@@ -73,7 +74,7 @@ void draw(){
 	stroke(255,25);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
-	rect(-r/2,-r/2,r,r);
+	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
 	stroke(0,255,255,25);
 	line(-r/2,-r/2,-100,-100);
 	popMatrix();

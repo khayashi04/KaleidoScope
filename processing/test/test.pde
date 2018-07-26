@@ -9,7 +9,7 @@ void setup(){
 }
 
 void draw(){
-  //background(0);
+  background(0);
 
   translate(width/2,height/2);
   rotateY(frameCount * 0.03);
