@@ -74,7 +74,7 @@ public void draw(){
 	pushMatrix();
 	rotate(radians(s*(360/60)));
 	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
-	line(-r/2,-r/2,-150,-150);
+	line(-r/2+random(-3,3),-r/2+random(-3,3),-150+random(-3,3),-150+random(-3,3));
 	popMatrix();
 
 	strokeWeight(4);
@@ -83,7 +83,7 @@ public void draw(){
 	rotate(radians(m*(360/60)));
 	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
 	stroke(0,0,255,25);
-	line(-r/2,-r/2,-50,-50);
+	line(-r/2+random(-3,3),-r/2+random(-3,3),-50+random(-3,3),-50+random(-3,3));
 	popMatrix();
 
 	strokeWeight(5);
@@ -92,7 +92,7 @@ public void draw(){
 	rotate(radians(h*(360/12)));
 	rect(-r/2+random(-3,3),-r/2+random(-3,3),r,r);
 	stroke(0,255,255,25);
-	line(-r/2,-r/2,-100,-100);
+	line(-r/2+random(-3,3),-r/2+random(-3,3),-100+random(-3,3),-100+random(-3,3));
 	popMatrix();
 }
   public void settings() { 	size(displayWidth,displayHeight); 	smooth(); }
