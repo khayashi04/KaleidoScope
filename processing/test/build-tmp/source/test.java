@@ -18,7 +18,7 @@ float time = 0;
 public void setup(){
   
   background(0);
-  stroke(255);
+  stroke(0,255,255);
   strokeWeight(5);
 }
 
@@ -29,7 +29,7 @@ public void draw(){
     point(x,height*noise(x/100,time));
     x += 1;
   }
-  time += 0.02f;
+  time += 0.05f;
 }
   public void settings() {  size(displayWidth,displayHeight); }
   static public void main(String[] passedArgs) {

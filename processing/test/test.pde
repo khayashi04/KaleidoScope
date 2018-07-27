@@ -2,7 +2,7 @@ float time = 0;
 void setup(){
   size(displayWidth,displayHeight);
   background(0);
-  stroke(255);
+  stroke(0,255,255);
   strokeWeight(5);
 }
 
@@ -13,5 +13,5 @@ void draw(){
     point(x,height*noise(x/100,time));
     x += 1;
   }
-  time += 0.02;
+  time += 0.05;
 }
