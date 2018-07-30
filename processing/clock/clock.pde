@@ -42,13 +42,15 @@ void draw(){
 		    point(x+random(-2,2),y+random(-2,2));	    	
 	    }
 	}
-	textSize(60);
-	fill(255);
+	PFont myFont = createFont("Palace Script MT",70);
+    textFont(myFont);
+    textAlign(CENTER);
+	fill(255);    	
 	float mr = random(-2,2);
 	if(s % 2==0){
-		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105+mr,15);
+		text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),0+mr,15);
 	}
-	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105+mr,15);
+	text(nf((int)hour(),2)+"   "+nf((int)minute(),2)+"   "+nf((int)second(),2),0+mr,15);
 	rotate(PI/4);
 	noFill();
 	
