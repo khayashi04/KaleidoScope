@@ -31,7 +31,7 @@ void draw(){
     	fill(255,random(0,255));
     	float x = r2 * cos(radians(t-60));
     	float y = r2 * sin(radians(t-60));
-    	text(time[i],x,y);
+    	text(time[i],x+random(-1,1),y+random(-1,1));
     	i++;
     }
 	noFill();
