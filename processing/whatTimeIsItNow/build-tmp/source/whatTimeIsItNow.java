@@ -60,7 +60,7 @@ public void draw(){
 	stroke(255);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	line(-r/2+10,-r/2+10,-190,-190);
+	line(-r/2+10,-r/2+10,-height/4,-height/4);
 	fill(255,100);
 	text(nf(PApplet.parseInt(s),2),-r/2+150,-r/2+150);
 	popMatrix();
@@ -69,7 +69,7 @@ public void draw(){
 	stroke(255);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	line(-r/2+10,-r/2+10,-190,-190);
+	line(-r/2+10,-r/2+10,-height/4,-height/4);
 	fill(255,100);
 	text(nf(PApplet.parseInt(m),2),-r/2+100,-r/2+100);
 	popMatrix();
@@ -78,7 +78,7 @@ public void draw(){
 	stroke(255);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
-	line(-r/2+10,-r/2+10,-190,-190);
+	line(-r/2+10,-r/2+10,-height/4,-height/4);
 	fill(255,100);
 	text(nf(PApplet.parseInt(h),2),-r/2+50,-r/2+50);
 	popMatrix();
