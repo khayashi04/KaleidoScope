@@ -82,7 +82,6 @@ public void draw(){
 	fill(255,100);
 	text(nf(PApplet.parseInt(h),2),-r/2+50,-r/2+50);
 	popMatrix();
-	saveFrame("frames/######.tif");
 }
   public void settings() { 	size(displayHeight,displayHeight); 	smooth(); }
   static public void main(String[] passedArgs) {
