@@ -45,53 +45,52 @@ public void draw(){
 	float r2 = (height - 100) / 2; 
   	for(int t = 0; t < 360; t += 6){
 	    stroke(255,50);
-		strokeWeight(10);
+		strokeWeight(5);
 	    
 	    float x = r2 * cos(radians(t));
 	    float y = r2 * sin(radians(t));
 
 	    if(t % 30 == 0){
-	    	strokeWeight(15);
+	    	strokeWeight(10);
 	    	stroke(255,100);
-	    	point(x+random(-2,2),y+random(-2,2));
+	    	point(x,y);
 	    }else{
-		    point(x+random(-2,2),y+random(-2,2));	    	
+		    point(x,y);	    	
 	    }
 	}
 	PFont myFont = createFont("Palace Script MT",70);
     textFont(myFont);
     textAlign(CENTER);
 	fill(255);    	
-	float mr = random(-2,2);
 	if(s % 2==0){
-		text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),0+mr,15);
+		text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),0,15);
 	}
-	text(nf((int)hour(),2)+"   "+nf((int)minute(),2)+"   "+nf((int)second(),2),0+mr,15);
+	text(nf((int)hour(),2)+"   "+nf((int)minute(),2)+"   "+nf((int)second(),2),0,15);
 	rotate(PI/4);
 	noFill();
 	
 	strokeWeight(3);
-	stroke(255,45);
+	stroke(255,30);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	rect(-r/2+random(-2,2),-r/2+random(-2,2),r,r);
-	line(-r/2+random(-2,2),-r/2+random(-2,2),-150+random(-2,2),-150+random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-150,-150);
 	popMatrix();
 
-	strokeWeight(4);
-	stroke(255,45);
+	strokeWeight(3);
+	stroke(255,30);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	rect(-r/2+random(-2,2),-r/2+random(-2,2),r,r);
-	line(-r/2+random(-2,2),-r/2+random(-2,2),-20+random(-2,2),-20+random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-20,-20);
 	popMatrix();
 
-	strokeWeight(5);
-	stroke(255,45);
+	strokeWeight(3);
+	stroke(255,30);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
-	rect(-r/2+random(-2,2),-r/2+random(-2,2),r,r);
-	line(-r/2+random(-2,2),-r/2+random(-2,2),-100+random(-2,2),-100+random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-100,-100);
 	popMatrix();
 }
   public void settings() { 	size(displayHeight,displayHeight); 	smooth(); }
