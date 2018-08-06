@@ -64,6 +64,6 @@ void draw(){
 	rotate(radians(h*(360/12)));
 	line(-r/2+10,-r/2+10,-height/4,-height/4);
 	fill(255,100);
-	text(nf(int(h),2),-r/2+50,-r/2+50);
+	text(nf(int(hour()),2),-r/2+50,-r/2+50);
 	popMatrix();
 }

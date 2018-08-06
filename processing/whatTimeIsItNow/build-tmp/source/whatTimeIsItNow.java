@@ -80,7 +80,7 @@ public void draw(){
 	rotate(radians(h*(360/12)));
 	line(-r/2+10,-r/2+10,-height/4,-height/4);
 	fill(255,100);
-	text(nf(PApplet.parseInt(h),2),-r/2+50,-r/2+50);
+	text(nf(PApplet.parseInt(hour()),2),-r/2+50,-r/2+50);
 	popMatrix();
 }
   public void settings() { 	size(displayHeight,displayHeight); 	smooth(); }
