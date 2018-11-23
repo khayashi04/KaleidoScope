@@ -29,51 +29,50 @@ void draw(){
 	float r2 = (height - 100) / 2; 
   	for(int t = 0; t < 360; t += 6){
 	    stroke(255,50);
-		strokeWeight(5);
+		strokeWeight(10);
 	    
 	    float x = r2 * cos(radians(t));
 	    float y = r2 * sin(radians(t));
 
 	    if(t % 30 == 0){
-	    	strokeWeight(10);
+	    	strokeWeight(15);
 	    	stroke(255,100);
-	    	point(x,y);
+	    	point(x+//random(-2,2),y+//random(-2,2));
 	    }else{
-		    point(x,y);	    	
+		    point(x+//random(-2,2),y+//random(-2,2));	    	
 	    }
 	}
-	PFont myFont = createFont("Palace Script MT",70);
-    textFont(myFont);
-    textAlign(CENTER);
-	fill(255);    	
+	textSize(60);
+	fill(255);
+	float mr = //random(-2,2);
 	if(s % 2==0){
-		text(nf((int)hour(),2)+" : "+nf((int)minute(),2)+" . "+nf((int)second(),2),0,15);
+		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105+mr,15);
 	}
-	text(nf((int)hour(),2)+"   "+nf((int)minute(),2)+"   "+nf((int)second(),2),0,15);
+	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105+mr,15);
 	rotate(PI/4);
 	noFill();
 	
 	strokeWeight(3);
-	stroke(255,30);
+	stroke(255,45);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	rect(-r/2,-r/2,r,r);
-	line(-r/2,-r/2,-150,-150);
+	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
+	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-150+//random(-2,2),-150+//random(-2,2));
 	popMatrix();
 
-	strokeWeight(3);
-	stroke(255,30);
+	strokeWeight(4);
+	stroke(255,45);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	rect(-r/2,-r/2,r,r);
-	line(-r/2,-r/2,-20,-20);
+	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
+	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-20+//random(-2,2),-20+//random(-2,2));
 	popMatrix();
 
-	strokeWeight(3);
-	stroke(255,30);
+	strokeWeight(5);
+	stroke(255,45);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
-	rect(-r/2,-r/2,r,r);
-	line(-r/2,-r/2,-100,-100);
+	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
+	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-100+//random(-2,2),-100+//random(-2,2));
 	popMatrix();
 }
