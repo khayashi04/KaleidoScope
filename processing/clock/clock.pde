@@ -37,18 +37,17 @@ void draw(){
 	    if(t % 30 == 0){
 	    	strokeWeight(15);
 	    	stroke(255,100);
-	    	point(x+//random(-2,2),y+//random(-2,2));
+	    	point(x,y);
 	    }else{
-		    point(x+//random(-2,2),y+//random(-2,2));	    	
+		    point(x,y);	    	
 	    }
 	}
 	textSize(60);
 	fill(255);
-	float mr = //random(-2,2);
 	if(s % 2==0){
 		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105+mr,15);
 	}
-	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105+mr,15);
+	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105,15);
 	rotate(PI/4);
 	noFill();
 	
@@ -56,23 +55,23 @@ void draw(){
 	stroke(255,45);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
-	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
-	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-150+//random(-2,2),-150+//random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-150,-150);
 	popMatrix();
 
 	strokeWeight(4);
 	stroke(255,45);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
-	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
-	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-20+//random(-2,2),-20+//random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-20,-20);
 	popMatrix();
 
 	strokeWeight(5);
 	stroke(255,45);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
-	rect(-r/2+//random(-2,2),-r/2+//random(-2,2),r,r);
-	line(-r/2+//random(-2,2),-r/2+//random(-2,2),-100+//random(-2,2),-100+//random(-2,2));
+	rect(-r/2,-r/2,r,r);
+	line(-r/2,-r/2,-100,-100);
 	popMatrix();
 }
