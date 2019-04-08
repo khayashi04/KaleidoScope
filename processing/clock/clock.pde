@@ -45,7 +45,7 @@ void draw(){
 	textSize(60);
 	fill(255);
 	if(s % 2==0){
-		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105+mr,15);
+		text(nf((int)hour(),2)+" : "+nf((int)minute(),2),-105,15);
 	}
 	text(nf((int)hour(),2)+"   "+nf((int)minute(),2),-105,15);
 	rotate(PI/4);
