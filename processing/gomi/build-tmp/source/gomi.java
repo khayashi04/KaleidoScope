@@ -14,21 +14,28 @@ import java.io.IOException;
 
 public class gomi extends PApplet {
 
-public void setup() {
+public void setup(){
   
+  frameRate(30);
   
 }
 
 int i = 0;
-
-public void draw() {
-  translate(0, 0);
+public void draw(){
+  translate(0,0);
   noStroke();
-  fill(0,0,0, 10);
-  rect(0, 0, width, height);
+  fill(0);
+  rect(0,0,width,height);
+  float rand1 = random(-20,20);
+  float rand2 = random(-20,20);
 
-  translate(width/2, height/2);
+  stroke(random(255),random(255),random(255));
   strokeWeight(5);
+  translate(width/2,height/2);
+  ellipse(rand1,rand2,width/2,height/2);
+  stroke(random(255),random(255),random(255));
+  ellipse(rand1,rand2,height/2,height/2);
+  strokeWeight(10);
   
   float r = height/2;
   /*float x1, y1 = 0;
@@ -99,9 +106,11 @@ public void draw() {
   point(x6,y6);
   point(x6r,y6r);
   i+=2;
+  noStroke();
+  fill(random(255),random(255),random(255));
+  ellipse(rand1,rand2,height/15,height/15);
 }
-
-  public void settings() {  size(displayHeight, displayHeight);  smooth(); }
+  public void settings() {  size(displayWidth,displayHeight);  smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "gomi" };
     if (passedArgs != null) {
