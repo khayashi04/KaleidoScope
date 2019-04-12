@@ -144,6 +144,8 @@ def sta(x):
 
 #こっちは統計の勉強用に作成したもので、numpyの関数は使っていません。ほんとは少しだけ使いました
 def dsta(x, y):
+	#flag
+	flag = 0
 	#値渡し回避
 	li1 = copy.copy(x)
 	li2 = copy.copy(y)
@@ -224,7 +226,8 @@ def dsta(x, y):
 
 	#相関係数を計算。0だった場合、強制的に0を表示する。
 	if hyo1 == 0 or hyo2 == 0:
-		a = b = r = 0
+		err = "ERROR: 0のため相関係数を計算できません。"
+		flag = 1
 	else:
 		r = kyoubun / hyo1 / hyo2
 		
@@ -247,5 +250,8 @@ def dsta(x, y):
 		print(l[i], yy[i])
 
 	print("\n共分散:   ", round(kyoubun, 4))
-	print("相関係数: ", round(r, 4))
-	print("回帰係数: y = ax + bとするとき、\n a = ", round(a, 4), ", b = ", round(b, 4),"\n")
+	if flag != 0:
+		print(err)
+	else:
+		print("相関係数: ", round(r, 4))
+		print("回帰係数: y = ax + bとするとき、\n a = ", round(a, 4), ", b = ", round(b, 4),"\n")
