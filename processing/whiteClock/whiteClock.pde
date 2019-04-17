@@ -1,19 +1,19 @@
 int[] bgc = {255, 255, 255}; //背景色
 int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
 int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
-int[] clc = {40, 80, 120};
+int[] clc = {40, 80, 120}; //針の濃さ（秒, 分, 時）
 
 void setup(){
-	size(displayHeight, displayHeight);
-	frameRate(30);
-	smooth();
+	size(displayHeight, displayHeight); //描画サイズ指定。縦横等しい値必須
+	frameRate(30); 
+	smooth(); 
 }
 
 void draw(){
-	int he = height;
+	int he = height; 
 	translate(0, 0);
 	noStroke();
-	fill(bgc[0], bgc[1], bgc[2], 150);
+	fill(bgc[0], bgc[1], bgc[2], 120);
 	rect(0, 0, he, he);
 
 	float s = second();
