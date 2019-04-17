@@ -14,8 +14,10 @@ import java.io.IOException;
 
 public class whiteClock extends PApplet {
 
-int bgc = 255; //background color
-int mc = 0; //main color
+int[] bgc = {255, 255, 255}; //背景色
+int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
+int[] pc = {0, 0, 0}; //時計板の色（R,G,B)
+int[] si = {200, 20, 100}; //針の長さ。（秒針,短針,長針）
 
 public void setup(){
 	
@@ -28,56 +30,57 @@ public void draw(){
 	float wi = width / 2;
 	translate(0,0);
 	noStroke();
-	fill(bgc,100);
-	rect(0,0,height,width);
-	
-	int[] size = {-200, -20, -100};
+	fill(bgc[0], bgc[1], bgc[2], 150);
+	rect(0, 0, height, width);
 
-	float[] time = new float[3];
-	time[0] = second();
-	time[1] = minute() + (time[0]/60.0f);
-	time[2] = hour()%12 + (time[1]/60.0f);
+	float s = second();
+	float m = minute() + (s / 60.0f);
+	float h = hour() % 12 + (m / 60.0f);
+	float[] time = {s, m, h};
 
-	float[] cs = {he + 100,he + 75, he + 50};
+	float[] cs = {he + 100, he + 75, he + 50};
 
-	translate(wi,he);
+	translate(wi, he);
 	noFill();
 
-	float p = (height - 100)/2;
-	for(int t = 0; t<360; t+=6){
-		stroke(mc,50);
-		strokeWeight(10);
-		float x = p*cos(radians(t));
-		float y = p*sin(radians(t));
-		if(t % 30 ==0){
-			strokeWeight(15);
-			stroke(mc,100);
-			point(x,y);
+	float p = (height - 100) / 2;
+	int stW = 0;
+	int fil = 0;
+	for(int t = 0; t < 360; t += 6){
+		if(t % 30 == 0){
+			stW = 15;
+			fil = 100;
 		}else{
-			point(x,y);
+			stW = 10;
+			fil = 50;
 		}
+		stroke(pc[0], pc[1], pc[2], fil);
+		strokeWeight(stW);
+		float x = p * cos(radians(t));
+		float y = p * sin(radians(t));
+		point(x, y);
 	}
 
-	rotate(PI/4);
+	rotate(PI / 4);
 	noFill();
 
-	float pax = 0.0f;
-	for(int z = 0; z < 3; z++){
+	float n = 0.0f;
+	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
-		stroke(mc,45);
+		stroke(mc[0], mc[1], mc[2], 45);
 		pushMatrix();
-		if(z==2){
-			pax = 360/12;
+		if(j == 2){
+			n = 12;
 		}else{
-			pax = 360/60;
-		};
-		rotate(radians(time[z]*pax));
-		rect(-cs[z]/2,-cs[z]/2,cs[z],cs[z]);
-		line(-cs[z]/2,-cs[z]/2,size[z],size[z]);
+			n = 60;
+		}
+		rotate(radians(time[j] * 360 / n));
+		rect(-cs[j] / 2, -cs[j] / 2, cs[j], cs[j]);
+		line(-cs[j] / 2, -cs[j] / 2, -si[j], -si[j]);
 		popMatrix();
 	}
 }
-  public void settings() { 	size(displayHeight,displayHeight); 	smooth(); }
+  public void settings() { 	size(displayHeight, displayHeight); 	smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "whiteClock" };
     if (passedArgs != null) {
