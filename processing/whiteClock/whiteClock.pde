@@ -1,32 +1,30 @@
 int bgc = 255; //background color
 int mc = 0; //main color
 
-
 void setup(){
-	size(displayHeight,displayHeight);
+	sije(displayHeight,displayHeight);
 	frameRate(30);
 	smooth();
 }
 
 void draw(){
+	float he = height / 2;
+	float wi = width / 2;
 	translate(0,0);
 	noStroke();
 	fill(bgc,100);
-	rect(0,0,width,height);
+	rect(0,0,height,width);
 	
-	int[] size = {-200, -20, -100};
+	int[] si = {-200, -20, -100};
 
 	float[] time = new float[3];
 	time[0] = second();
 	time[1] = minute() + (time[0]/60.0);
 	time[2] = hour()%12 + (time[1]/60.0);
 
-	float[] cs = new float[3];
-	for(int i = 1; i<4; i++){
-		cs[i-1] = height/2 + int((100/i));
-	}
+	float[] cs = {he + 100,he + 75, he + 50};
 
-	translate(width/2,height/2);
+	translate(wi,he);
 	noFill();
 
 	float p = (height - 100)/2;
@@ -47,19 +45,19 @@ void draw(){
 	rotate(PI/4);
 	noFill();
 
-	float pax = 0.0;
-	for(int z = 0; z < 3; z++){
+	float n = 0.0;
+	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
 		stroke(mc,45);
 		pushMatrix();
-		if(z==2){
-			pax = 360/12;
+		if(j==2){
+			n = 360/12;
 		}else{
-			pax = 360/60;
-		};
-		rotate(radians(time[z]*pax));
-		rect(-cs[z]/2,-cs[z]/2,cs[z],cs[z]);
-		line(-cs[z]/2,-cs[z]/2,size[z],size[z]);
+			n = 360/60;
+		}
+		rotate(radians(time[j]*n));
+		rect(-cs[j]/2,-cs[j]/2,cs[j],cs[j]);
+		line(-cs[j]/2,-cs[j]/2,si[j],si[j]);
 		popMatrix();
 	}
 }

@@ -17,7 +17,6 @@ public class whiteClock extends PApplet {
 int bgc = 255; //background color
 int mc = 0; //main color
 
-
 public void setup(){
 	
 	frameRate(30);
@@ -25,10 +24,12 @@ public void setup(){
 }
 
 public void draw(){
+	float he = height / 2;
+	float wi = width / 2;
 	translate(0,0);
 	noStroke();
 	fill(bgc,100);
-	rect(0,0,width,height);
+	rect(0,0,height,width);
 	
 	int[] size = {-200, -20, -100};
 
@@ -37,12 +38,9 @@ public void draw(){
 	time[1] = minute() + (time[0]/60.0f);
 	time[2] = hour()%12 + (time[1]/60.0f);
 
-	float[] cs = new float[3];
-	for(int i = 1; i<4; i++){
-		cs[i-1] = height/2 + PApplet.parseInt((100/i));
-	}
+	float[] cs = {he + 100,he + 75, he + 50};
 
-	translate(width/2,height/2);
+	translate(wi,he);
 	noFill();
 
 	float p = (height - 100)/2;
@@ -78,9 +76,6 @@ public void draw(){
 		line(-cs[z]/2,-cs[z]/2,size[z],size[z]);
 		popMatrix();
 	}
-
-
-
 }
   public void settings() { 	size(displayHeight,displayHeight); 	smooth(); }
   static public void main(String[] passedArgs) {
