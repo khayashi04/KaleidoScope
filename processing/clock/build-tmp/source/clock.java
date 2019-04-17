@@ -23,7 +23,7 @@ public void setup(){
 public void draw(){
 	translate(0,0);
 	noStroke();
-	fill(0,100);
+	fill(255,100);
 	rect(0,0,width,height);
 	
 	stroke(255,20);
@@ -71,7 +71,7 @@ public void draw(){
 	noFill();
 	
 	strokeWeight(3);
-	stroke(255,45);
+	stroke(0,45);
 	pushMatrix();
 	rotate(radians(s*(360/60)));
 	rect(-r/2,-r/2,r,r);
@@ -79,7 +79,7 @@ public void draw(){
 	popMatrix();
 
 	strokeWeight(4);
-	stroke(255,45);
+	stroke(0,45);
 	pushMatrix();
 	rotate(radians(m*(360/60)));
 	rect(-r/2,-r/2,r,r);
@@ -87,7 +87,7 @@ public void draw(){
 	popMatrix();
 
 	strokeWeight(5);
-	stroke(255,45);
+	stroke(0,45);
 	pushMatrix();
 	rotate(radians(h*(360/12)));
 	rect(-r/2,-r/2,r,r);
