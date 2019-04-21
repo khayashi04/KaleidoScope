@@ -44,8 +44,7 @@ public void draw(){
 	noFill();
 
 	float p = (he - 20) / 2;
-	int stW = 0;
-	int fil = 0;
+	int stW, fil = 0;
 	for(int t = 0; t < 360; t += 6){
 		if(t % 30 == 0){
 			stW = 15;
