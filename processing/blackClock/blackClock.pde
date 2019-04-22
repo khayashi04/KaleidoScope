@@ -1,19 +1,21 @@
-int[] bgc = {255, 255, 255}; //背景色
-int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
-int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
-int[] clc = {40, 80, 120}; //針の濃さ（秒, 分, 時）
+int[] clc = {40, 80, 120};
+int[] clr = {255, 0};
 
 void setup(){
-	size(displayHeight, displayHeight); //描画サイズ指定。縦横等しい値必須
+	size(displayHeight, displayHeight);
 	frameRate(30); 
 	smooth(); 
 }
 
 void draw(){
-	int he = height; 
+	int he = height;
+	float now = hour();
 	translate(0, 0);
 	noStroke();
-	fill(bgc[0], bgc[1], bgc[2], 120);
+	if(now >= 18 || now < 6){
+		clr[0] = 0; clr[1] = 255;
+	}
+	fill(clr[0], 120);
 	rect(0, 0, he, he);
 
 	float s = second();
@@ -35,7 +37,7 @@ void draw(){
 	}else{
 			stW = 10; fil = 50;
 		}
-		stroke(poc[0], poc[1], poc[2], fil);
+		stroke(clr[1], fil);
 		strokeWeight(stW);
 		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
 		point(xy[0], xy[1]);
@@ -45,7 +47,7 @@ void draw(){
 	float n = 0.0;
 	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
-		stroke(mc[0], mc[1], mc[2], clc[j]);
+		stroke(clr[1], clc[j]);
 		pushMatrix();
 		if(j == 2){
 			n = 12.0;
