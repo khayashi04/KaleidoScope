@@ -14,18 +14,17 @@ import java.io.IOException;
 
 public class blackClock extends PApplet {
 
-int[] clc = {40, 80, 120}; //針の濃さ（秒, 分, 時）
 int[] clr = {255, 0};
 
 public void setup(){
-	 //描画サイズ指定。縦横等しい値必須
+	
 	frameRate(30); 
 	 
 }
 
 public void draw(){
 	int he = height;
-	float now = 23;
+	float now = hour();
 	translate(0, 0);
 	noStroke();
 	if(now >= 18 || now < 6){
@@ -58,12 +57,12 @@ public void draw(){
 		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
 		point(xy[0], xy[1]);
 	}
-	rotate(PI / 4);
+	//rotate(PI / 4);
 	
 	float n = 0.0f;
 	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
-		stroke(clr[1], clc[j]);
+		stroke(clr[1], 40 + 40 * j);
 		pushMatrix();
 		if(j == 2){
 			n = 12.0f;

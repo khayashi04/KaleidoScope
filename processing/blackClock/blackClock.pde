@@ -1,4 +1,3 @@
-int[] clc = {40, 80, 120};
 int[] clr = {255, 0};
 
 void setup(){
@@ -17,6 +16,8 @@ void draw(){
 	}
 	fill(clr[0], 120);
 	rect(0, 0, he, he);
+	translate(he / 2, he / 2);
+	noFill();
 
 	float s = second();
 	float m = minute() + (s / 60.0);
@@ -25,9 +26,6 @@ void draw(){
 
 	float[] cs = {(he + (he / 3.5)) / 2, (he + (he / 4.7)) / 2, (he + (he / 7)) / 2};
 	int[] si = {he / 5, he / 40, he / 10}; 
-
-	translate(he / 2, he / 2);
-	noFill();
 
 	float p = (he - 20) / 2;
 	int stW, fil = 0;
@@ -43,11 +41,10 @@ void draw(){
 		point(xy[0], xy[1]);
 	}
 	rotate(PI / 4);
-	
 	float n = 0.0;
 	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
-		stroke(clr[1], clc[j]);
+		stroke(clr[1], 40 + 40 * j);
 		pushMatrix();
 		if(j == 2){
 			n = 12.0;

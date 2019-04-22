@@ -1,7 +1,6 @@
 int[] bgc = {255, 255, 255}; //背景色
 int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
 int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
-int[] clc = {40, 80, 120}; //針の濃さ（秒, 分, 時）
 
 void setup(){
 	size(displayHeight, displayHeight); //描画サイズ指定。縦横等しい値必須
@@ -15,6 +14,8 @@ void draw(){
 	noStroke();
 	fill(bgc[0], bgc[1], bgc[2], 120);
 	rect(0, 0, he, he);
+	translate(he / 2, he / 2);
+	noFill();
 
 	float s = second();
 	float m = minute() + (s / 60.0);
@@ -23,9 +24,6 @@ void draw(){
 
 	float[] cs = {(he + (he / 3.5)) / 2, (he + (he / 4.7)) / 2, (he + (he / 7)) / 2};
 	int[] si = {he / 5, he / 40, he / 10}; 
-
-	translate(he / 2, he / 2);
-	noFill();
 
 	float p = (he - 20) / 2;
 	int stW, fil = 0;
@@ -41,11 +39,10 @@ void draw(){
 		point(xy[0], xy[1]);
 	}
 	rotate(PI / 4);
-	
 	float n = 0.0;
 	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
-		stroke(mc[0], mc[1], mc[2], clc[j]);
+		stroke(mc[0], mc[1], mc[2], 40 + 40 * j);
 		pushMatrix();
 		if(j == 2){
 			n = 12.0;

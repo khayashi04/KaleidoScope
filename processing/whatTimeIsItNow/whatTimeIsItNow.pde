@@ -31,12 +31,12 @@ void draw(){
     	fill(255,random(0,255));
     	float x = r2 * cos(radians(t-60));
     	float y = r2 * sin(radians(t-60));
-    	text(time[i],x+random(-1,1),y+random(-1,1));
+    	text(time[i],x,y);
     	i++;
     }
 	noFill();
 	strokeWeight(2);
-	ellipse(random(-2,2),random(-2,2),height/40,height/40);
+	ellipse(0, 0, height/40, height/40);
 
 	rotate(PI/4);
 	
