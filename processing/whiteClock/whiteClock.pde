@@ -3,7 +3,7 @@ int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
 int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
 
 void setup(){
-	size(300, 300); //描画サイズ指定。縦横等しい値必須
+	size(displayHeight, displayHeight); //描画サイズ指定。縦横等しい値必須
 	frameRate(30); 
 	smooth(); 
 }
