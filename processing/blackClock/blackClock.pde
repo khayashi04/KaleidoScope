@@ -8,7 +8,11 @@ void setup(){
 
 void draw(){
 	int he = height;
-	float now = hour();
+	float[] time = {second(), minute(), hour()};
+	float now = time[2];
+	float[] cs = {(he + (he / 3.5)) / 2, (he + (he / 4.7)) / 2, (he + (he / 7)) / 2};
+	int[] si = {he / 5, he / 40, he / 10}; 
+	
 	translate(0, 0);
 	noStroke();
 	if(now >= 18 || now < 6){
@@ -18,14 +22,6 @@ void draw(){
 	rect(0, 0, he, he);
 	translate(he / 2, he / 2);
 	noFill();
-
-	float s = second();
-	float m = minute() + (s / 60.0);
-	float h = hour() % 12 + (m / 60.0);
-	float[] time = {s, m, h};
-
-	float[] cs = {(he + (he / 3.5)) / 2, (he + (he / 4.7)) / 2, (he + (he / 7)) / 2};
-	int[] si = {he / 5, he / 40, he / 10}; 
 
 	float p = (he - 20) / 2;
 	int stW, fil = 0;

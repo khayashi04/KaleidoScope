@@ -32,17 +32,12 @@ public void draw(){
 	}
 	fill(clr[0], 120);
 	rect(0, 0, he, he);
-
-	float s = second();
-	float m = minute() + (s / 60.0f);
-	float h = hour() % 12 + (m / 60.0f);
-	float[] time = {s, m, h};
-
-	float[] cs = {(he + (he / 3.5f)) / 2, (he + (he / 4.7f)) / 2, (he + (he / 7)) / 2};
-	int[] si = {he / 5, he / 40, he / 10}; 
-
 	translate(he / 2, he / 2);
 	noFill();
+
+	float[] time = {second(), minute(), hour()};
+	float[] cs = {(he + (he / 3.5f)) / 2, (he + (he / 4.7f)) / 2, (he + (he / 7)) / 2};
+	int[] si = {he / 5, he / 40, he / 10}; 
 
 	float p = (he - 20) / 2;
 	int stW, fil = 0;
@@ -57,8 +52,7 @@ public void draw(){
 		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
 		point(xy[0], xy[1]);
 	}
-	//rotate(PI / 4);
-	
+	rotate(PI / 4);
 	float n = 0.0f;
 	for(int j = 0; j < 3; j++){
 		strokeWeight(3);
