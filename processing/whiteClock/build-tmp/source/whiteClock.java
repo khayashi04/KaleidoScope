@@ -19,7 +19,8 @@ int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
 int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
 
 public void setup(){
-	 //描画サイズ指定。縦横等しい値必須
+	//fullScreen();
+	 //300以下描画困
 	frameRate(30); 
 	 
 }
@@ -29,16 +30,16 @@ public void draw(){
 	translate(0, 0);
 	noStroke();
 	fill(bgc[0], bgc[1], bgc[2], 120);
-	rect(0, 0, he, he);
-	translate(he / 2, he / 2);
-	noFill();
+	rect(0, 0, width, he);
 
+	translate(width / 2, he / 2);
+	noFill();
 	float s = second();
 	float m = minute() + (s / 60.0f);
 	float h = hour() % 12 + (m / 60.0f);
 	float[] time = {s, m, h};
 
-	float[] cs = {(he + (he / 3.5f)) / 2, (he + (he / 4.7f)) / 2, (he + (he / 7)) / 2};
+	float[] cs = {he + (he / 3.5f), he + (he / 4.7f), he + (he / 7)};
 	int[] si = {he / 5, he / 40, he / 10}; 
 
 	float p = (he - 20) / 2;
@@ -54,6 +55,7 @@ public void draw(){
 		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
 		point(xy[0], xy[1]);
 	}
+	
 	rotate(PI / 4);
 	float n = 0.0f;
 	for(int j = 0; j < 3; j++){
@@ -66,12 +68,12 @@ public void draw(){
 			n = 60.0f;
 		}
 		rotate(radians(time[j] * 360 / n));
-		rect(-cs[j] / 2, -cs[j] / 2, cs[j], cs[j]);
-		line(-cs[j] / 2, -cs[j] / 2, -si[j], -si[j]);
+		rect(-cs[j] / 4, -cs[j] / 4, cs[j] / 2, cs[j] / 2);
+		line(-cs[j] / 4, -cs[j] / 4, -si[j], -si[j]);
 		popMatrix();
 	}
 }
-  public void settings() { 	size(300, 300); 	smooth(); }
+  public void settings() { 	size(300,300); 	smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "whiteClock" };
     if (passedArgs != null) {

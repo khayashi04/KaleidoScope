@@ -16,17 +16,17 @@ print("helps()でヘルプを表示。コマンドラインで利用する際に
 def helps():
 	th = {1:"primeNum(整数): 指定された整数までのすべての素数を表示し、素数の数を表示。", 
 		2:"sort(リスト): 指定されたリストを昇順に並べ替え。", 
-		3:"rsort(リスト): 指定されたリストを降順に並べ替え。", 
-		4:"dist(リスト): 指定されたリストのヒストグラムを表示。",
-		5:"ddist(リスト1,リスト2): 指定された二つのリストのヒストグラムを表示。",
+		3:"reverseSort(リスト): 指定されたリストを降順に並べ替え。", 
+		4:"SingleHist(リスト): 指定されたリストのヒストグラムを表示。",
+		5:"doubleHist(リスト1,リスト2): 指定された二つのリストのヒストグラムを表示。",
 		6:"plot(リスト1, リスト2): 指定された二つのリストの散布図をプロット。", 
-		7:"sta(リスト): 指定されたリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示。",
-		8:"dsta(リスト1, リスト2): 指定された二つのリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示し、二つのリストの共分散、相関係数、回帰係数を表示。",
-		9:"des(リスト): 指定されたリストのデータ数(count)、平均(mean)、標準偏差(std)、最小値(min)、第一四分位点(25%)、第二四分位点(50%)、第三四分位点(75%)、最大値(max)、データ型(dtype)を出力。",
+		7:"singleStatus(リスト): 指定されたリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示。",
+		8:"doubleStatus(リスト1, リスト2): 指定された二つのリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示し、二つのリストの共分散、相関係数、回帰係数を表示。",
+		9:"describeData(リスト): 指定されたリストのデータ数(count)、平均(mean)、標準偏差(std)、最小値(min)、第一四分位点(25%)、第二四分位点(50%)、第三四分位点(75%)、最大値(max)、データ型(dtype)を出力。",
 		10:"table(リスト): 指定されたリストの度数分布表を表示。左側に階級値、右側に頻度。",
 		11:"diceAll(): 二つのさいころの全パターンを表示。",
-		12:"dicett(): 二つのさいころの目を足したものを度数分布表に表示。左側に階級値、右側に頻度。",
-		13:"dicekt(): 二つのさいころの目を掛けたものを度数分布表に表示。左側に階級値、右側に頻度。"}
+		12:"doubleDiceSum(): 二つのさいころの目を足したものを度数分布表に表示。左側に階級値、右側に頻度。",
+		13:"doubleDiceMult(): 二つのさいころの目を掛けたものを度数分布表に表示。左側に階級値、右側に頻度。"}
 	while 1:
 		h = int(input("表示したいHelpを選択してください。0を入力で終了\n1: primeNum\n2: sort\n3: rsort\n4: dist\n5: ddist\n6: plot\n7: sta\n8: dsta\n9: des\n10: table\n11: diceAll\n12: dicett\n13: dicekt\n"))
 		if h == 0: break
@@ -59,12 +59,12 @@ def sort(x):
 	print(np.sort(srt))
 
 #リストソート(降順)
-def rsort(x):
+def reverseSort(x):
 	unsrt = copy.copy(x)
 	print(np.sort(unsrt)[::-1])
 
 #データ数が多い場合使用すればいいと思うの。
-def des(x):
+def describeData(x):
 	print(pd.Series(x).describe())
 
 #度数分布表を表示
@@ -72,12 +72,12 @@ def table(x):
 	print(pd.Series(x).value_counts())
 
 #ヒストグラムを表示
-def dist(x):
+def singleHist(x):
 	plt.hist(x)
 	plt.show()
 
 #ヒストグラムを二つ表示
-def ddist(x,y):	
+def doubleHist(x,y):	
 	plt.subplot(2,2,1)
 	plt.hist(x)
 	plt.title("hist x")
@@ -103,14 +103,14 @@ def diceAll():
 			if j == 6: print("")
 
 #足し算パターン
-def dicett():
+def doubleDiceSum():
 	diceT = []
 	for i in range(1,7):
 		for j in range(1,7):
 			diceT.append(i+j)
 	print(pd.Series(diceT).value_counts(sort=False))
 
-def dicekt():
+def doubleDiceMult():
 	diceK = []
 	for i in range(1,7):
 		for j in range(1,7):
@@ -118,7 +118,7 @@ def dicekt():
 	print(pd.Series(diceK).value_counts(sort=False))
 
 #関数をたたきまくった代物
-def sta(x):
+def singleStatus(x):
 	#値渡し回避
 	li = copy.copy(x)
 
@@ -143,7 +143,7 @@ def sta(x):
 	print("")
 
 #こっちは統計の勉強用に作成したもので、numpyの関数は使っていません。ほんとは少しだけ使いました
-def dsta(x, y):
+def doubleStatus(x, y):
 	#flag
 	flag = 0
 	#値渡し回避

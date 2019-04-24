@@ -1,17 +1,18 @@
 int[] clr = {255, 0};
 
 void setup(){
-	size(displayHeight, displayHeight);
+	fullScreen();
+	//size(900, 900);
 	frameRate(30); 
-	smooth(); 
+	smooth(8); 
 }
-
+int t, i = 1;
 void draw(){
-	int he = height;
+	int h = height;
 	float[] time = {second(), minute(), hour()};
 	float now = time[2];
-	float[] cs = {(he + (he / 3.5)) / 2, (he + (he / 4.7)) / 2, (he + (he / 7)) / 2};
-	int[] si = {he / 5, he / 40, he / 10}; 
+	float[] cs = {h + (h / 3.5), h + (h / 4.7), h + (h / 7)};
+	int[] si = {h / 5, h / 40, h / 10}; 
 	
 	translate(0, 0);
 	noStroke();
@@ -19,11 +20,11 @@ void draw(){
 		clr[0] = 0; clr[1] = 255;
 	}
 	fill(clr[0], 120);
-	rect(0, 0, he, he);
-	translate(he / 2, he / 2);
+	rect(0, 0, width, h);
+	translate(width / 2, h / 2);
 	noFill();
 
-	float p = (he - 20) / 2;
+	float p = (h - 20) / 2;
 	int stW, fil = 0;
 	for(int t = 0; t < 360; t += 6){
 		if(t % 30 == 0){
@@ -36,6 +37,7 @@ void draw(){
 		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
 		point(xy[0], xy[1]);
 	}
+
 	rotate(PI / 4);
 	float n = 0.0;
 	for(int j = 0; j < 3; j++){
@@ -48,8 +50,8 @@ void draw(){
 			n = 60.0;
 		}
 		rotate(radians(time[j] * 360 / n));
-		rect(-cs[j] / 2, -cs[j] / 2, cs[j], cs[j]);
-		line(-cs[j] / 2, -cs[j] / 2, -si[j], -si[j]);
+		rect(-cs[j] / 4, -cs[j] / 4, cs[j] / 2, cs[j] / 2);
+		line(-cs[j] / 4, -cs[j] / 4, -si[j], -si[j]);
 		popMatrix();
 	}
 }

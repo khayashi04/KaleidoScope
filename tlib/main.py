@@ -78,7 +78,7 @@ while True:
 		print("")
 	elif yy == 12:
 		print("\n賽目  頻度")
-		dicekt
+		dicekt()
 		print("")
 	else:
 		print("ERROR")
