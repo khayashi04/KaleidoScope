@@ -22,7 +22,7 @@ public void setup(){
 	frameRate(30); 
 	 
 }
-int t, i = 1;
+
 public void draw(){
 	int h = height;
 	float[] time = {second(), minute(), hour()};
@@ -39,31 +39,7 @@ public void draw(){
 	rect(0, 0, width, h);
 	translate(width / 2, h / 2);
 	noFill();
-
-	float p = (h - 20) / 2;
-	int stW, fil = 0;
-	for(int t = 0; t < 360; t += 6){
-		if(t % 30 == 0){
-			stW = 15; fil = 150;
-	}else{
-			stW = 10; fil = 50;
-		}
-		stroke(clr[1], fil);
-		strokeWeight(stW);
-		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
-		point(xy[0], xy[1]);
-	}
-	stroke(0);
-	strokeWeight(10);
-	pushMatrix();
-	point(p * cos(radians(t)), p * sin(radians(t)));
-	popMatrix();
-	if(t > 360){
-		t = 0;
-	}else{
-		t+=6;
-	}
-	
+	plotTimePonint(clr[1], h);
 
 	rotate(PI / 4);
 	float n = 0.0f;
@@ -80,6 +56,21 @@ public void draw(){
 		rect(-cs[j] / 4, -cs[j] / 4, cs[j] / 2, cs[j] / 2);
 		line(-cs[j] / 4, -cs[j] / 4, -si[j], -si[j]);
 		popMatrix();
+	}
+}
+public void plotTimePonint(int stroke, int h){
+	float p = (h - 20) / 2;
+	int stW, fil = 0;
+	for(int t = 0; t < 360; t += 6){
+		if(t % 30 == 0){
+			stW = 15; fil = 150;
+		}else{
+			stW = 10; fil = 50;
+		}
+		stroke(stroke, fil);
+		strokeWeight(stW);
+		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
+		point(xy[0], xy[1]);
 	}
 }
   public void settings() { 	fullScreen(); 	smooth(8); }

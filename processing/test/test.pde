@@ -6,20 +6,28 @@ void setup(){
 
 int t, i = 0;
 void draw(){
-	
 	translate(width / 2, height / 2);
-	float p = height / 2;
+	plotTimePoint(255, height);
+
+}
+
+void plotTimePoint(int cc, float h){
+	float p = (h - 20) / 2;
+	int stW, fil, t = 0;
 	while(true){
-		stroke(255);
-		strokeWeight(10);
-		point(p * cos(radians(t)), p * sin(radians(t)));
+		if(t % 30 == 0){
+			stW = 15; fil = 150;
+		}else{
+			stW = 15; fil = 150;
+		}
 		if(t > 360){
 			break;
 		}else{
 			t += 6;
 		}
-		delay(10);
+		stroke(cc, fil);
+		strokeWeight(stW);
+		float[] xy = {p * cos(radians(t)), p * sin(radians(t))};
+		point(xy[0], xy[1]);
 	}
-	print("finished");
-
 }

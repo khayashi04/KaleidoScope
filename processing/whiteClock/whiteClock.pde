@@ -31,7 +31,7 @@ void draw(){
 	for(int t = 0; t < 360; t += 6){
 		if(t % 30 == 0){
 			stW = 15; fil = 150;
-	}else{
+		}else{
 			stW = 10; fil = 50;
 		}
 		stroke(poc[0], poc[1], poc[2], fil);
