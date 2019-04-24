@@ -146,6 +146,7 @@ def singleStatus(x):
 def doubleStatus(x, y):
 	#flag
 	flag = 0
+	
 	#値渡し回避
 	li1 = copy.copy(x)
 	li2 = copy.copy(y)
