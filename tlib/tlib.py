@@ -10,7 +10,8 @@ import pandas as pd
 import copy
 from collections import Counter
 
-print("helps()でヘルプを表示。コマンドラインで利用する際に参照。\nすべてをインポートする際に時間がかかる可能性あり\n")
+def first():
+	print("helps()でヘルプを表示。コマンドラインで利用する際に参照。\nすべてをインポートする際に時間がかかる可能性あり\nインポート方法\nfrom tlib import *")
 
 #helps
 def helps():
@@ -53,28 +54,34 @@ def primeNum(num):
 	#素数の数をプリント
 	print("素数の合計: ", len(n), "\n")
 
+
 #リストソート(昇順)
 def sort(x):
 	srt = copy.copy(x)
 	print(np.sort(srt))
+
 
 #リストソート(降順)
 def reverseSort(x):
 	unsrt = copy.copy(x)
 	print(np.sort(unsrt)[::-1])
 
+
 #データ数が多い場合使用すればいいと思うの。
 def describeData(x):
 	print(pd.Series(x).describe())
+
 
 #度数分布表を表示
 def table(x):
 	print(pd.Series(x).value_counts())
 
+
 #ヒストグラムを表示
 def singleHist(x):
 	plt.hist(x)
 	plt.show()
+
 
 #ヒストグラムを二つ表示
 def doubleHist(x,y):	
@@ -86,12 +93,14 @@ def doubleHist(x,y):
 	plt.title("hist y")
 	plt.show()
 
+
 #散布図を描画。値渡しは回避済み
 def plot(x, y):	
 	plt.scatter(x,y)
 	plt.xlabel("x")
 	plt.ylabel("y")
 	plt.show()
+
 
 #さいころ全パターン
 def diceAll():
@@ -102,6 +111,7 @@ def diceAll():
 			x += 1
 			if j == 6: print("")
 
+
 #足し算パターン
 def doubleDiceSum():
 	diceT = []
@@ -110,12 +120,14 @@ def doubleDiceSum():
 			diceT.append(i+j)
 	print(pd.Series(diceT).value_counts(sort=False))
 
+
 def doubleDiceMult():
 	diceK = []
 	for i in range(1,7):
 		for j in range(1,7):
 			diceK.append(i*j)
 	print(pd.Series(diceK).value_counts(sort=False))
+
 
 #関数をたたきまくった代物
 def singleStatus(x):
@@ -142,11 +154,11 @@ def singleStatus(x):
 		print(l[i], lii[i])
 	print("")
 
+
 #こっちは統計の勉強用に作成したもので、numpyの関数は使っていません。ほんとは少しだけ使いました
 def doubleStatus(x, y):
 	#flag
 	flag = 0
-	
 	#値渡し回避
 	li1 = copy.copy(x)
 	li2 = copy.copy(y)
@@ -256,3 +268,8 @@ def doubleStatus(x, y):
 	else:
 		print("相関係数: ", round(r, 4))
 		print("回帰係数: y = ax + bとするとき、\n a = ", round(a, 4), ", b = ", round(b, 4),"\n")
+
+
+#main
+if __name__ == '__main__':
+	first()

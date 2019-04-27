@@ -1,4 +1,5 @@
-from tlib import *
+import tlib as t
+import numpy as np
 while True:
 	xx = int(input("\nmode select\n入力モード以外を選択するとモードに応じて乱数を生成。0を入力で終了。\n1:整数\n2:正規分布\n3:二項分布\n4:ポワソン分布\n5:小さい値\n6:入力\n7:Helps\n"))
 	if xx == 0:
@@ -29,7 +30,7 @@ while True:
 		y = list(map(int, input("list2> ").split()))
 	elif xx == 7:
 		#helpを表示
-		helps()	
+		t.helps()	
 	else:
 		print("ERROR")
 		break
@@ -41,44 +42,44 @@ while True:
 		primeNum(int(input("整数を入力\n")))
 	elif yy== 2:
 		print("\ndate1\n")
-		sort(x)
+		t.sort(x)
 		print("\ndate2\n")
-		sort(y)
+		t.sort(y)
 	elif yy== 3:
 		print("\ndate1\n")
-		rsort(x)
+		t.reverseSort(x)
 		print("\ndate2\n")
-		rsort(y)
+		t.reverseSort(y)
 	elif yy== 4:
-		dist(x)
-		dist(y)
+		t.singleHist(x)
+		t.singleHist(y)
 	elif yy== 5:
-		ddist(x,y)
+		t.doubleHist(x,y)
 	elif yy== 6:
-		plot(x,y)
+		t.plot(x,y)
 	elif yy == 7:
-		dsta(x,y)
+		t.doubleStatus(x,y)
 	elif yy == 8:
 		print("\ndate1\n")
-		des(x)
+		t.describeData(x)
 		print("\ndate2\n")
-		des(y)
+		t.describeData(y)
 	elif yy == 9:
 		print("\ndate1\n")
-		table(x)
+		t.table(x)
 		print("\ndate2\n")
-		table(y)
+		t.table(y)
 	elif yy == 10:
-		print("")
-		diceAll()
+		t.print("")
+		diceAllPattern()
 		print("")
 	elif yy == 11:
 		print("\n賽目  頻度")
-		dicett()
+		t.doubleDiceSum()
 		print("")
 	elif yy == 12:
 		print("\n賽目  頻度")
-		dicekt()
+		t.doubleDiceMult()
 		print("")
 	else:
 		print("ERROR")
