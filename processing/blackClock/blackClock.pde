@@ -1,8 +1,8 @@
 int[] clr = {255, 0};
 
 void setup(){
-	fullScreen();
-	//size(900, 900);
+	//fullScreen();
+	size(400, 400);
 	frameRate(30); 
 	smooth(8); 
 }

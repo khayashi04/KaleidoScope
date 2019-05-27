@@ -11,7 +11,7 @@ import copy
 from collections import Counter
 
 def first():
-	print("helps()でヘルプを表示。コマンドラインで利用する際に参照。\nすべてをインポートする際に時間がかかる可能性あり\nインポート方法\nfrom tlib import *")
+	print("helps()でヘルプを表示。コマンドラインで利用する際に参照。\nすべてをインポートする際に時間がかかる可能性あり\n\nインポート方法\nimport tlib as t\n\n関数使用方法\nt.関数名\n")
 
 #helps
 def helps():
@@ -25,7 +25,7 @@ def helps():
 		8:"doubleStatus(リスト1, リスト2): 指定された二つのリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示し、二つのリストの共分散、相関係数、回帰係数を表示。",
 		9:"describeData(リスト): 指定されたリストのデータ数(count)、平均(mean)、標準偏差(std)、最小値(min)、第一四分位点(25%)、第二四分位点(50%)、第三四分位点(75%)、最大値(max)、データ型(dtype)を出力。",
 		10:"table(リスト): 指定されたリストの度数分布表を表示。左側に階級値、右側に頻度。",
-		11:"diceAll(): 二つのさいころの全パターンを表示。",
+		11:"diceAllPattern(): 二つのさいころの全パターンを表示。",
 		12:"doubleDiceSum(): 二つのさいころの目を足したものを度数分布表に表示。左側に階級値、右側に頻度。",
 		13:"doubleDiceMult(): 二つのさいころの目を掛けたものを度数分布表に表示。左側に階級値、右側に頻度。"}
 	while 1:
@@ -103,7 +103,7 @@ def plot(x, y):
 
 
 #さいころ全パターン
-def diceAll():
+def diceAllPattern():
 	x = 1
 	for i in range(1,7):
 		for j in range(1,7):

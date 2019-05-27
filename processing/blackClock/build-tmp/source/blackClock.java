@@ -17,8 +17,8 @@ public class blackClock extends PApplet {
 int[] clr = {255, 0};
 
 public void setup(){
+	//fullScreen();
 	
-	//size(900, 900);
 	frameRate(30); 
 	 
 }
@@ -26,13 +26,12 @@ public void setup(){
 public void draw(){
 	int h = height;
 	float[] time = {second(), minute(), hour()};
-	float now = time[2];
 	float[] cs = {h + (h / 3.5f), h + (h / 4.7f), h + (h / 7)};
-	int[] si = {h / 5, h / 40, h / 10}; 
+	float[] si = {h / 5, h / 40, h / 10}; 
 	
 	translate(0, 0);
 	noStroke();
-	if(now >= 18 || now < 6){
+	if(time[2] >= 18 || time[2] < 6){
 		clr[0] = 0; clr[1] = 255;
 	}
 	fill(clr[0], 120);
@@ -58,6 +57,7 @@ public void draw(){
 		popMatrix();
 	}
 }
+
 public void plotTimePonint(int stroke, int h){
 	float p = (h - 20) / 2;
 	int stW, fil = 0;
@@ -73,7 +73,7 @@ public void plotTimePonint(int stroke, int h){
 		point(xy[0], xy[1]);
 	}
 }
-  public void settings() { 	fullScreen(); 	smooth(8); }
+  public void settings() { 	size(400, 400); 	smooth(8); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "blackClock" };
     if (passedArgs != null) {
