@@ -18,7 +18,7 @@ def helps():
 	th = {1:"primeNum(整数): 指定された整数までのすべての素数を表示し、素数の数を表示。", 
 		2:"sort(リスト): 指定されたリストを昇順に並べ替え。", 
 		3:"reverseSort(リスト): 指定されたリストを降順に並べ替え。", 
-		4:"SingleHist(リスト): 指定されたリストのヒストグラムを表示。",
+		4:"singleHist(リスト): 指定されたリストのヒストグラムを表示。",
 		5:"doubleHist(リスト1,リスト2): 指定された二つのリストのヒストグラムを表示。",
 		6:"plot(リスト1, リスト2): 指定された二つのリストの散布図をプロット。", 
 		7:"singleStatus(リスト): 指定されたリストの平均、中央値、最頻値、最大値、最小値、範囲、二乗平均、平均偏差、分散、標準偏差を表示。",
@@ -29,7 +29,7 @@ def helps():
 		12:"doubleDiceSum(): 二つのさいころの目を足したものを度数分布表に表示。左側に階級値、右側に頻度。",
 		13:"doubleDiceMult(): 二つのさいころの目を掛けたものを度数分布表に表示。左側に階級値、右側に頻度。"}
 	while 1:
-		h = int(input("表示したいHelpを選択してください。0を入力で終了\n1: primeNum\n2: sort\n3: rsort\n4: dist\n5: ddist\n6: plot\n7: sta\n8: dsta\n9: des\n10: table\n11: diceAll\n12: dicett\n13: dicekt\n"))
+		h = int(input("表示したいHelpを選択してください。0を入力で終了\n1: primeNum\n2: sort\n3: reverseSort\n4: singleHist\n5: doubleHist\n6: plot\n7: singleStatus\n8: doubleStatus\n9: describeData\n10: table\n11: diceAllPattern\n12: doubleDiceSum\n13: doubleDiceMult\n"))
 		if h == 0: break
 		print("\n",th[h], "\n")
 
