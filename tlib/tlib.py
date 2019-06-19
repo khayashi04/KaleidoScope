@@ -1,8 +1,6 @@
 '''
 統計ライブラリtlib
 作成者：K.Hayashi
-コマンド上でもわかり易く使えるようにhelpsを追加
-データの数が10000を超えると結果出力まで1秒以上かかる可能性あり。
 '''
 import matplotlib.pyplot as plt
 import numpy as np
