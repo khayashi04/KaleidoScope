@@ -17,8 +17,8 @@ public class blackClock extends PApplet {
 int[] clr = {255, 0};
 
 public void setup(){
-	//fullScreen();
 	
+	//size(400, 400);
 	frameRate(30); 
 	 
 }
@@ -73,7 +73,7 @@ public void plotTimePonint(int stroke, int h){
 		point(xy[0], xy[1]);
 	}
 }
-  public void settings() { 	size(400, 400); 	smooth(8); }
+  public void settings() { 	fullScreen(); 	smooth(8); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "blackClock" };
     if (passedArgs != null) {

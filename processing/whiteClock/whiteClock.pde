@@ -4,7 +4,7 @@ int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
 
 void setup(){
 	fullScreen(); //全画面表示
-	//size(300,300); //300未満描画困
+	//bsize(300,300); //300未満描画困
 	frameRate(30); 
 	smooth(); 
 }

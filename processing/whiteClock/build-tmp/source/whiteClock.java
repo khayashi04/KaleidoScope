@@ -19,8 +19,8 @@ int[] mc = {0, 0, 0}; //時計針の色 (R,G,B)
 int[] poc = {0, 0, 0}; //時計板の色（R,G,B)
 
 public void setup(){
-	//fullScreen();
-	 //300以下描画困
+	 //全画面表示
+	//bsize(300,300); //300未満描画困
 	frameRate(30); 
 	 
 }
@@ -47,7 +47,7 @@ public void draw(){
 	for(int t = 0; t < 360; t += 6){
 		if(t % 30 == 0){
 			stW = 15; fil = 150;
-	}else{
+		}else{
 			stW = 10; fil = 50;
 		}
 		stroke(poc[0], poc[1], poc[2], fil);
@@ -73,7 +73,7 @@ public void draw(){
 		popMatrix();
 	}
 }
-  public void settings() { 	size(300,300); 	smooth(); }
+  public void settings() { 	fullScreen(); 	smooth(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "whiteClock" };
     if (passedArgs != null) {
