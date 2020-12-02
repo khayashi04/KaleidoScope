@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html lang = "ja">
+<html>
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>
 	<title>Test</title>
-	<style>
-		#child1{
-			background-color: lightblue; 
-		}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		#child2{
-			background-color: lightgreen;
-		}
-
-		@media (min-width: 600px){
-			#parent{
-				display: flex;
-			}
-			
-			#child1{
-				flex-grow: 1;
-			}
-
-			#child2{
-				flex-grow: 1;
-			}
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="test.css">
 </head>
 <body>
-	<div id="parent">
-		<div id="child1">要素1</div>
-		<div id="child2">要素2</div>
+	<div class="row no-gutters">
+		<div class="col-md-6 no-gutters">
+			<div class="leftside">
+				<h1>The European languages</h1>
+				<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.</p>
+			</div>
+		</div>
+		<div class="col-md-6 no-gutters">
+			<div class="rightside">
+				<h1>The European langueages</h1>
+				<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.</p>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
