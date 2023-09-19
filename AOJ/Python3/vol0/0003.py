@@ -1,7 +1,8 @@
-n = int(input())
-for i in range(n):
-	li  = sorted(map(int, input().split()))
-	if(pow(li[0], 2) + pow (li[1], 2) == pow(li[2], 2)):
+# AOJ vol0 0003.py
+num = int(input())
+for i in range(num):
+	list_1  = sorted(map(int, input().split()))
+	if list_1[0]**2 + list_1[1]**2 == list_1[2]**2:
 		print('YES')
 	else:
 		print('NO')
