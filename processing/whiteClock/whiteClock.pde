@@ -2,8 +2,8 @@ int[] backGroundColor = {0, 0, 0}; //背景色
 int[] clockColor = {255, 255, 255}; //時計の色（R,G,B)
 
 void setup(){
-	//fullScreen(); //全画面表示
-	size(500,500); //300未満描画困
+	fullScreen(); //全画面表示
+	//size(500,500); //300未満描画困
 	frameRate(60); 
 	smooth(); 
 }
@@ -20,18 +20,24 @@ void draw(){
 	float m = minute() + (s / 60.0);
 	float h = hour() % 12 + (m / 60.0);
 	float[] time = {s, m, h};
+	//float[] time = {0, 0, 0}; //debug
 
 	float[] clockSize = {height + (height / 3.5), height + (height / 4.7), height + (height / 7)};
 	int[] clockHandsSize = {height / 5, height / 40, height / 10}; 
 
 	float clockHandsLength = (height - 20) / 4;
-	for(int t = 0; t < 360; t += 30){
+	for(int t = 0; t < 360; t += 6){
 		stroke(clockColor[0], clockColor[1], clockColor[2], 50);
-		strokeWeight(15);
+		if(t % 30 == 0){
+			strokeWeight(10);
+		}else{
+			strokeWeight(5);
+		}
+		
 		float[] xy = {clockHandsLength * cos(radians(t)), clockHandsLength * sin(radians(t))};
 		point(xy[0], xy[1]);
 	}
-	
+	point(width / 2, height / 2);
 	rotate(PI / 4);
 	float n = 0.0;
 	for(int i = 0; i < 3; i++){
@@ -45,6 +51,7 @@ void draw(){
 		}
 		rotate(radians(time[i] * 360 / n));
 		line(-clockSize[i] / 4, -clockSize[i] / 4, -clockHandsSize[i], -clockHandsSize[i]);
+		//rect(-clockSize[i] / 4, -clockSize[i] / 4, clockSize[i] / 2, clockSize[i] / 2);
 		popMatrix();
 	}
 }
