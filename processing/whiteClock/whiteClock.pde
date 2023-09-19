@@ -1,5 +1,5 @@
-int[] backGroundColor = {0, 0, 0}; //背景色
-int[] clockColor = {255, 255, 255}; //時計の色（R,G,B)
+int[] backGroundColor = {0, 0, 0}; //背景色（R, G, B）
+int[] clockColor = {255, 255, 255}; //時計の色（R, G, B)
 
 //setup
 void setup(){
@@ -28,7 +28,7 @@ void draw(){
 	drawClockHands(getTime());
 }
 
-//現在時刻を取得しfloat_listで返す
+//現在時刻を取得しfloat型listで返す
 float[] getTime(){
 	float[] time = {0,0, 0.0, 0.0};
 	time[0] = second();
@@ -51,15 +51,15 @@ void drawClockPoints(){
 		//ちょぼちょぼを描画する座標
 		float x = clockPointsPos * cos(radians(i));
 		float y = clockPointsPos * sin(radians(i));
-		point(x, y);
+		point(x, y); //ちょぼちょぼを描画
 	}
 }
 
 //時計の針を描画する関数
 void drawClockHands(float[] nowTime){ //引数に現在時刻が格納されたリストを与える
 	float[] clockHandsPointStr = {height + (height / 3.5), 
-		height + (height / 4.7), height + (height / 7)}; //時計の針の始点の座標
-	float[] clockHandsPointFin = {height / 5, height / 40, height / 10}; //時計の針の終点の座標
+		height + (height / 4.7), height + (height / 7)}; //針の始点の座標
+	float[] clockHandsPointFin = {height / 5, height / 40, height / 10}; //針の終点の座標
 	strokeWeight(3); //針の太さ
 	rotate(PI / 4); //pi/4回転させる
 
