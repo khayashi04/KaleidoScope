@@ -1,3 +1,8 @@
+/*
+whiteClock
+全然Whiteじゃないけど
+*/
+
 int[] backGroundColor = {0, 0, 0}; //背景色（R, G, B）
 int[] clockColor = {255, 255, 255}; //時計の色（R, G, B)
 
