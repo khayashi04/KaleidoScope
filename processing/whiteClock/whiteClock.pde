@@ -1,7 +1,7 @@
 int[] backGroundColor = {0, 0, 0}; //背景色
 int[] clockColor = {255, 255, 255}; //時計の色（R,G,B)
 
-
+//setup
 void setup(){
 	fullScreen(); //全画面表示
 	//size(500,500); //300未満描画困
@@ -9,7 +9,7 @@ void setup(){
 	smooth(); 
 }
 
-
+//draw
 void draw(){
 	//キャンパス初期化
 	translate(0, 0);
